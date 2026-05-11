@@ -45,19 +45,19 @@ const services = [
     title: "Авторская стрижка",
     text: "Архитектурная стрижка с консультацией, мытьём, стайлингом и персональной рекомендацией по уходу.",
     image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80&q=90",
+      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Королевское бритьё",
     text: "Классическое бритьё опасной бритвой, горячее полотенце, уход за кожей и ароматный финиш.",
     image:
-      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80&q=90",
+      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Ногтевой сервис",
-    text: "Премиальное окрашивание, тонирование и сияющий уход для глубины цвета и дорогого блеска.",
+    text: "Премиальный уход, аккуратная форма, стойкое покрытие и идеальный финиш без перегруза.",
     image:
-      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80&q=90",
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -93,11 +93,11 @@ const masters = [
 
 const gallery = [
   "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?auto=format&fit=crop&w=w=700&q=75",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=w=700&q=75",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=w=700&q=75",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=w=700&q=75",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=w=700&q=75",
+  "https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?auto=format&fit=crop&w=700&q=75",
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=75",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=700&q=75",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=700&q=75",
+  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=75",
 ];
 
 const reviews = [
