@@ -45,19 +45,19 @@ const services = [
     title: "Авторская стрижка",
     text: "Архитектурная стрижка с консультацией, мытьём, стайлингом и персональной рекомендацией по уходу.",
     image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80",
+      "/images/service-1.jpg",
   },
   {
     title: "Королевское бритьё",
     text: "Классическое бритьё опасной бритвой, горячее полотенце, уход за кожей и ароматный финиш.",
     image:
-      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80",
+      "/images/service-2.jpg",
   },
   {
     title: "Ногтевой сервис",
     text: "Премиальный уход, аккуратная форма, стойкое покрытие и идеальный финиш без перегруза.",
     image:
-      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80",
+      "/images/service-3.jpg",
   },
 ];
 
@@ -75,29 +75,29 @@ const masters = [
     name: "Александр Волков",
     role: "Арт-директор / Барбер",
     image:
-      "https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=900&q=90",
+      "/images/master-1.jpg",
   },
   {
     name: "Мария Орлова",
     role: "Колорист / Стилист",
     image:
-      "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=90",
+      "/images/master-2.jpg",
   },
   {
     name: "Дмитрий Соколов",
     role: "Мастер по стрижкам и текстуре",
     image:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=900&q=90",
+      "/images/master-3.jpg",
   },
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=700&q=75",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=75",
+  "/images/gallery-1.jpg",
+  "/images/gallery-2.jpg",
+  "/images/gallery-3.jpg",
+  "/images/gallery-4.jpg",
+  "/images/gallery-5.jpg",
+  "/images/gallery-6.jpg",
 ];
 
 const reviews = [
@@ -403,7 +403,7 @@ function Hero() {
         </video>
 
         <img
-          src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=900&q=80"
+          src="/images/hero-mobile.jpg"
           alt=""
           className="h-full w-full object-cover opacity-40 md:hidden"
         />
