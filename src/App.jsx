@@ -472,7 +472,7 @@ function Hero() {
         >
           <div className="relative ml-auto max-w-md rounded-[1.5rem] border border-white/12 bg-white/[0.06] p-2 shadow-2xl backdrop-blur-2xl sm:rounded-[2rem] sm:p-3">
             <img
-              src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?auto=format&fit=crop&w=800&q=80"
+              src="/images/footer_image.jpg"
               alt="Barber service"
               loading="lazy"
               className="aspect-[4/5] w-full rounded-[1.25rem] object-cover sm:rounded-[1.55rem]"
