@@ -45,19 +45,19 @@ const services = [
     title: "Авторская стрижка",
     text: "Архитектурная стрижка с консультацией, мытьём, стайлингом и персональной рекомендацией по уходу.",
     image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=90",
+      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80&q=90",
   },
   {
     title: "Королевское бритьё",
     text: "Классическое бритьё опасной бритвой, горячее полотенце, уход за кожей и ароматный финиш.",
     image:
-      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=90",
+      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80&q=90",
   },
   {
     title: "Ногтевой сервис",
     text: "Премиальное окрашивание, тонирование и сияющий уход для глубины цвета и дорогого блеска.",
     image:
-      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=90",
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80&q=90",
   },
 ];
 
@@ -92,12 +92,12 @@ const masters = [
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=90",
-  "https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?auto=format&fit=crop&w=900&q=90",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=90",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=90",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=900&q=90",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=90",
+  "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=75",
+  "https://images.unsplash.com/photo-1580618864180-f6d7d39b8ff6?auto=format&fit=crop&w=w=700&q=75",
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=w=700&q=75",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=w=700&q=75",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=w=700&q=75",
+  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=w=700&q=75",
 ];
 
 const reviews = [
@@ -147,6 +147,7 @@ function useGsapMotion() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     const parallaxItems = gsap.utils.toArray("[data-parallax]");
     parallaxItems.forEach((item) => {
       gsap.to(item, {
@@ -181,6 +182,7 @@ function useGsapMotion() {
     });
 
     const splitItems = gsap.utils.toArray("[data-split]");
+    if (isMobile) return;
     splitItems.forEach((item) => {
       const text = item.textContent;
       item.innerHTML = text
@@ -381,49 +383,114 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] overflow-hidden pt-20 text-white sm:pt-24">
+    <section
+      id="top"
+      className="relative min-h-[100svh] overflow-hidden pt-20 text-white sm:pt-24"
+    >
       <div className="absolute inset-0">
-        <video className="h-full w-full object-cover opacity-45" autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=2200&q=90">
-          <source src="https://cdn.coverr.co/videos/coverr-barber-shaving-a-man-1568/1080p.mp4" type="video/mp4" />
+        <video
+          className="hidden h-full w-full object-cover opacity-45 md:block"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1200&q=80"
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-barber-shaving-a-man-1568/1080p.mp4"
+            type="video/mp4"
+          />
         </video>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,.18),transparent_28%),linear-gradient(90deg,rgba(8,7,6,.96),rgba(8,7,6,.72),rgba(8,7,6,.2)),linear-gradient(0deg,rgba(8,7,6,1),transparent_45%)]" />
+
+        <img
+          src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=900&q=80"
+          alt=""
+          className="h-full w-full object-cover opacity-40 md:hidden"
+        />
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,.14),transparent_28%),linear-gradient(90deg,rgba(8,7,6,.96),rgba(8,7,6,.76),rgba(8,7,6,.35)),linear-gradient(0deg,rgba(8,7,6,1),transparent_45%)]" />
       </div>
 
-      <div className="pointer-events-none absolute left-1/2 top-20 h-80 w-80 -translate-x-1/2 rounded-full bg-amber-300/20 blur-[120px] floating-gradient" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-stone-500/20 blur-[130px] floating-gradient-delayed" />
+      <div className="pointer-events-none absolute left-1/2 top-20 hidden h-80 w-80 -translate-x-1/2 rounded-full bg-amber-300/20 blur-[120px] floating-gradient md:block" />
+
+      <div className="pointer-events-none absolute bottom-0 right-0 hidden h-96 w-96 rounded-full bg-stone-500/20 blur-[130px] floating-gradient-delayed md:block" />
 
       <div className="relative mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl items-center px-4 py-12 sm:px-5 sm:py-20 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
-        <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+          className="max-w-3xl"
+        >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Premium grooming house</SectionLabel>
+            <SectionLabel>Luxury beauty residence</SectionLabel>
           </motion.div>
-          <motion.h1 variants={fadeUp} data-split className="font-serif text-[3.25rem] leading-[0.9] tracking-[-0.06em] text-white min-[390px]:text-6xl sm:text-7xl lg:text-8xl">
+
+          <motion.h1
+            variants={fadeUp}
+            data-split
+            className="font-serif text-[3.25rem] leading-[0.9] tracking-[-0.06em] text-white min-[390px]:text-6xl sm:text-7xl lg:text-8xl"
+          >
             Тёмная роскошь. Точная форма. Твой новый образ.
           </motion.h1>
-          <motion.p variants={fadeUp} className="mt-7 max-w-xl text-base leading-8 text-white/66 sm:text-lg">
-            Салон красоты и барбершоп с камерной атмосферой, экспертными мастерами и сервисом, который ощущается как private club.
+
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 max-w-xl text-base leading-7 text-white/66 sm:mt-7 sm:text-lg sm:leading-8"
+          >
+            Салон красоты и барбершоп с камерной атмосферой,
+            экспертными мастерами и сервисом,
+            который ощущается как закрытый клуб.
           </motion.p>
-          <motion.div variants={fadeUp} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <MagneticButton href="#booking" className="group inline-flex items-center justify-center gap-3 rounded-full bg-amber-100 px-7 py-4 text-sm font-semibold text-black transition hover:bg-white hover:shadow-[0_24px_70px_rgba(251,191,36,.28)]">
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row"
+          >
+            <MagneticButton
+              href="#booking"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-amber-100 px-7 py-4 text-sm font-semibold text-black transition hover:bg-white"
+            >
               Забронировать визит
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
             </MagneticButton>
-            <MagneticButton href="#services" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-sm font-medium text-white backdrop-blur-xl transition hover:border-amber-100/40 hover:bg-white/[0.08]">
+
+            <MagneticButton
+              href="#services"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-sm font-medium text-white backdrop-blur-xl"
+            >
               Смотреть услуги
             </MagneticButton>
           </motion.div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.94, y: 40 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.8 }} className="mt-14 lg:mt-0" data-parallax="-10">
-          <div className="relative ml-auto max-w-md rounded-[2rem] border border-white/12 bg-white/[0.06] p-3 shadow-2xl backdrop-blur-2xl">
-            <img src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?auto=format&fit=crop&w=1100&q=90" alt="Barber service" className="aspect-[4/5] rounded-[1.55rem] object-cover" />
-            <div className="absolute -bottom-7 left-6 right-6 rounded-3xl border border-white/12 bg-black/45 p-5 backdrop-blur-2xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94, y: 40 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.8 }}
+          className="mt-12 pb-10 sm:mt-14 lg:mt-0 lg:pb-0"
+        >
+          <div className="relative ml-auto max-w-md rounded-[1.5rem] border border-white/12 bg-white/[0.06] p-2 shadow-2xl backdrop-blur-2xl sm:rounded-[2rem] sm:p-3">
+            <img
+              src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?auto=format&fit=crop&w=800&q=80"
+              alt="Barber service"
+              loading="lazy"
+              className="aspect-[4/5] w-full rounded-[1.25rem] object-cover sm:rounded-[1.55rem]"
+            />
+
+            <div className="absolute -bottom-6 left-3 right-3 rounded-3xl border border-white/12 bg-black/45 p-4 backdrop-blur-2xl sm:-bottom-7 sm:left-6 sm:right-6 sm:p-5">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-amber-100/70">Today</p>
-                  <p className="mt-1 font-serif text-2xl">12 свободных слотов</p>
+                  <p className="text-xs uppercase tracking-[0.28em] text-amber-100/70">
+                    Сегодня
+                  </p>
+
+                  <p className="mt-1 font-serif text-xl sm:text-2xl">
+                    12 свободных слотов
+                  </p>
                 </div>
-                <div className="grid h-14 w-14 place-items-center rounded-full bg-white text-black">
+
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-black sm:h-14 sm:w-14">
                   <CalendarDays className="h-5 w-5" />
                 </div>
               </div>
@@ -495,7 +562,7 @@ function Prices() {
 function Masters() {
   return (
     <section id="masters" className="relative overflow-hidden bg-[#080706] px-4 py-16 sm:px-5 sm:py-24 text-white lg:px-8">
-      <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-white/5 blur-[120px] floating-gradient-delayed" />
+      <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-white/5 hidden md:block blur-[120px] floating-gradient-delayed" />
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
           <div className="max-w-2xl">
